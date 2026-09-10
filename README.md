@@ -1,6 +1,6 @@
 # API Docs
 
-Static API reference site for the MyPubGroup API, published to GitHub Pages.
+Static API reference site for the FindMyPub API, published to GitHub Pages.
 
 The site is generated from [`openapi.json`](openapi.json) using
 [Redocly CLI](https://redocly.com/docs/cli/), which renders it into a single
