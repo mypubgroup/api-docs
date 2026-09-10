@@ -14,7 +14,8 @@ enabled — see [Manual setup](#manual-setup) below).
 This repository does not author the spec itself. Instead:
 
 1. [`mypubgroup/api`](https://github.com/mypubgroup/api) exports its OpenAPI
-   schema (via `dedoc/scramble`) after its test suite passes on `develop`.
+   schema (via `dedoc/scramble`) after it deploys to production from `main`,
+   so the published docs always reflect what's actually live.
 2. That workflow commits the refreshed `openapi.json` to this repository's
    `main` branch (see `.github/workflows/build-docs.yml` in the `api` repo).
 3. The push above triggers this repository's own
