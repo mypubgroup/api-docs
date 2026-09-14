@@ -1,0 +1,32 @@
+:root {
+  --fmp-link: #80cff5;
+  --fmp-font: "Poppins", sans-serif;
+}
+
+html,
+body,
+#redoc {
+  font-family: var(--fmp-font) !important;
+}
+
+#redoc,
+#redoc * {
+  font-family: var(--fmp-font) !important;
+}
+
+/* #redoc a,
+#redoc a:visited,
+#redoc a:hover,
+#redoc .api-content a,
+#redoc .api-content a:visited,
+#redoc .api-content a:hover,
+#redoc .menu-content a,
+#redoc .menu-content a:visited,
+#redoc .menu-content a:hover {
+  color: var(--fmp-link) !important;
+}
+
+#redoc .api-content a span,
+#redoc .menu-content a span {
+  color: var(--fmp-link) !important;
+} */

@@ -2,7 +2,12 @@
     "openapi": "3.1.0",
     "info": {
         "title": "FindMyPub API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "description": "The latest documentation for the FindMyPub REST API.\n\nAccess JSON endpoints for API discovery. Authenticate using your client id and\nsecret, then use a bearer token to authorise against endpoints such as\nscreening.",
+        "x-logo": {
+            "url": "https://mypubgroup.github.io/api-docs/assets/fmp-logo.png",
+            "altText": "FindMyPub"
+        }
     },
     "servers": [
         {
@@ -283,22 +288,32 @@
                         }
                     },
                     "409": {
-                        "description": "An error",
+                        "description": "Rule configuration missing",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
+                                        "status": {
+                                            "type": "integer",
+                                            "description": "HTTP status code.",
+                                            "examples": [
+                                                409
+                                            ]
+                                        },
                                         "message": {
                                             "type": "string",
-                                            "description": "Error overview.",
-                                            "examples": [
-                                                ""
-                                            ]
+                                            "description": "Error overview."
+                                        },
+                                        "code": {
+                                            "type": "string",
+                                            "description": "Machine-readable error code."
                                         }
                                     },
                                     "required": [
-                                        "message"
+                                        "status",
+                                        "message",
+                                        "code"
                                     ]
                                 }
                             }

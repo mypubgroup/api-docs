@@ -3,9 +3,9 @@
   "private": true,
   "description": "Static API reference site for the FindMyPub API, built from openapi.json and published to GitHub Pages.",
   "scripts": {
-    "build": "redocly build-docs openapi.json --output dist/index.html --title \"FindMyPub API\""
+    "build": "redocly build-docs openapi.json --output dist/index.html --title \"FindMyPub API\" --template redocly-template.hbs && mkdir -p dist/assets && cp -R assets/. dist/assets"
   },
   "devDependencies": {
-    "@redocly/cli": "^2.51.2"
+    "@redocly/cli": "^2.53.0"
   }
 }
