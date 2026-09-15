@@ -194,7 +194,12 @@
                     "401": {
                         "$ref": "#/components/responses/AuthenticationException"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "default": []
+                    }
+                ]
             }
         },
         "/1/create-token": {
@@ -240,7 +245,12 @@
                     "422": {
                         "$ref": "#/components/responses/ValidationException"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "default": []
+                    }
+                ]
             }
         },
         "/1/myrecruitai": {
@@ -317,11 +327,23 @@
                     "422": {
                         "$ref": "#/components/responses/ValidationException"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "default": []
+                    }
+                ]
             }
         }
     },
     "components": {
+        "securitySchemes": {
+            "default": {
+                "type": "http",
+                "description": "API tokens are provided on request.",
+                "scheme": "bearer"
+            }
+        },
         "schemas": {
             "CreateTokenRequest": {
                 "type": "object",
