@@ -5,7 +5,7 @@
         "version": "1.0.0",
         "description": "The latest documentation for the FindMyPub REST API.\n\nAccess JSON endpoints for API discovery. Authenticate using your client id and\nsecret, then use a bearer token to authorise against endpoints such as\nscreening.",
         "x-logo": {
-            "url": "https://mypubgroup.github.io/api-docs/assets/fmp-logo.png",
+            "url": "/assets/fmp-logo.png",
             "altText": "FindMyPub"
         }
     },
@@ -138,33 +138,18 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "`Failed`\n\n`Success`",
+                        "description": "`Success`",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "anyOf": [
-                                        {
-                                            "type": "object",
-                                            "properties": {
-                                                "data": {
-                                                    "$ref": "#/components/schemas/Failed"
-                                                }
-                                            },
-                                            "required": [
-                                                "data"
-                                            ]
-                                        },
-                                        {
-                                            "type": "object",
-                                            "properties": {
-                                                "data": {
-                                                    "$ref": "#/components/schemas/Success"
-                                                }
-                                            },
-                                            "required": [
-                                                "data"
-                                            ]
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/components/schemas/Success"
                                         }
+                                    },
+                                    "required": [
+                                        "data"
                                     ]
                                 }
                             }

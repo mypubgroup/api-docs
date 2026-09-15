@@ -1,11 +1,14 @@
 {
   "name": "api-docs",
   "private": true,
-  "description": "Static API reference site for the FindMyPub API, built from openapi.json and published to GitHub Pages.",
+  "description": "Static API reference site for the FindMyPub API, built with Scalar and Nuxt and published to GitHub Pages.",
   "scripts": {
-    "build": "redocly build-docs openapi.json --output dist/index.html --title \"FindMyPub API\" --template redocly-template.hbs && mkdir -p dist/assets && cp -R assets/. dist/assets"
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@redocly/cli": "^2.53.0"
+    "@scalar/nuxt": "^0.6.67",
+    "nuxt": "^4.5.2"
   }
 }

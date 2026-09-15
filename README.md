@@ -3,8 +3,9 @@
 Static API reference site for the FindMyPub API, published to GitHub Pages.
 
 The site is generated from [`openapi.json`](openapi.json) using
-[Redocly CLI](https://redocly.com/docs/cli/), which renders it into a single
-static HTML page (via `redoc-static`).
+[Scalar's Nuxt module](https://scalar.com/products/api-references/integrations/nuxt).
+Nuxt SSR stays enabled during generation so the API reference is prerendered
+as static HTML for GitHub Pages.
 
 Live site: `https://mypubgroup.github.io/api-docs/` (once GitHub Pages is
 enabled — see [Manual setup](#manual-setup) below).
@@ -30,10 +31,11 @@ overwritten automatically whenever the API changes.
 ```bash
 npm install
 npm run build
+npm run preview
 ```
 
-Output is written to `dist/index.html`. Open it directly in a browser to
-preview.
+Output is written to `.output/public`. The production build uses
+`/api-docs/` as its base path to match the GitHub Pages URL.
 
 ## Manual setup
 

@@ -1,32 +1,99 @@
 :root {
   --fmp-link: #80cff5;
-  --fmp-font: "Poppins", sans-serif;
+  --fmp-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-header-height: 64px;
 }
 
 html,
-body,
-#redoc {
-  font-family: var(--fmp-font) !important;
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--fmp-font);
 }
 
-#redoc,
-#redoc * {
-  font-family: var(--fmp-font) !important;
+body {
+  background: var(--scalar-background-1, #fff);
 }
 
-/* #redoc a,
-#redoc a:visited,
-#redoc a:hover,
-#redoc .api-content a,
-#redoc .api-content a:visited,
-#redoc .api-content a:hover,
-#redoc .menu-content a,
-#redoc .menu-content a:visited,
-#redoc .menu-content a:hover {
-  color: var(--fmp-link) !important;
+body.light-mode,
+body.dark-mode,
+.light-mode,
+.dark-mode {
+  --scalar-color-accent: var(--fmp-link);
+  --scalar-background-accent: rgba(128, 207, 245, 0.16);
+  --scalar-link-color: var(--fmp-link);
+  --scalar-link-color-hover: var(--fmp-link);
 }
 
-#redoc .api-content a span,
-#redoc .menu-content a span {
-  color: var(--fmp-link) !important;
-} */
+a {
+  color: var(--fmp-link);
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  height: var(--site-header-height);
+  padding: 0 24px;
+  border-bottom: 1px solid var(--scalar-border-color, rgba(0, 0, 0, 0.08));
+  background: color-mix(in srgb, var(--scalar-background-1, #fff) 92%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--scalar-color-1, #111);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-brand:hover {
+  color: var(--fmp-link);
+}
+
+.site-brand-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 48px;
+  height: 34px;
+}
+
+.site-logo {
+  position: absolute;
+  inset: 0;
+  width: 48px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.site-logo-dark {
+  opacity: 0;
+}
+
+body.dark-mode .site-logo-light {
+  opacity: 0;
+}
+
+body.dark-mode .site-logo-dark {
+  opacity: 1;
+}
+
+.site-main {
+  min-height: calc(100vh - var(--site-header-height));
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding: 0 16px;
+  }
+}
