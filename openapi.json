@@ -138,33 +138,18 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "`Failed`\n\n`Success`",
+                        "description": "`Success`",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "anyOf": [
-                                        {
-                                            "type": "object",
-                                            "properties": {
-                                                "data": {
-                                                    "$ref": "#/components/schemas/Failed"
-                                                }
-                                            },
-                                            "required": [
-                                                "data"
-                                            ]
-                                        },
-                                        {
-                                            "type": "object",
-                                            "properties": {
-                                                "data": {
-                                                    "$ref": "#/components/schemas/Success"
-                                                }
-                                            },
-                                            "required": [
-                                                "data"
-                                            ]
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/components/schemas/Success"
                                         }
+                                    },
+                                    "required": [
+                                        "data"
                                     ]
                                 }
                             }
@@ -278,11 +263,18 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "`Outcome`",
+                        "description": "`Pass`\n\n`Fail`",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Outcome"
+                                    "anyOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Pass"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/Fail"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -362,6 +354,26 @@
                 ],
                 "title": "CreateTokenRequest"
             },
+            "Fail": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "const": "fail"
+                    },
+                    "reasons": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "reasons"
+                ],
+                "title": "Fail"
+            },
             "Failed": {
                 "type": "object",
                 "properties": {
@@ -414,41 +426,18 @@
                 ],
                 "title": "Logout"
             },
-            "Outcome": {
-                "anyOf": [
-                    {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "type": "string",
-                                "const": "fail"
-                            },
-                            "reasons": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "required": [
-                            "status",
-                            "reasons"
-                        ]
-                    },
-                    {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "type": "string",
-                                "const": "pass"
-                            }
-                        },
-                        "required": [
-                            "status"
-                        ]
+            "Pass": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "const": "pass"
                     }
+                },
+                "required": [
+                    "status"
                 ],
-                "title": "Outcome"
+                "title": "Pass"
             },
             "ScreeningRequest": {
                 "type": "object",

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FindMyPub API Documentation</title>
+
+    <script src="./js/site.js"></script>
+    <link rel="stylesheet" href="./css/site.css">
+    <link rel="stylesheet" href="./css/custom.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="FindMyPub API home">
+        <img src="./assets/fmp-logo-dark.png" alt="" />
+        <span>FindMyPub API</span>
+      </a>
+      <a class="spec-link" href="./openapi.json">OpenAPI JSON</a>
+    </header>
+
+    <main class="docs-shell">
+      <elements-api
+        apiDescriptionUrl="./openapi.json"
+        router="hash"
+        layout="responsive"
+        logo="./assets/fmp-logo-dark.png"
+        hideTryIt="true"
+        hideSchemas="true"
+      ></elements-api>
+    </main>
+  </body>
+</html>

@@ -1,11 +1,23 @@
 {
   "name": "api-docs",
   "private": true,
-  "description": "Static API reference site for the FindMyPub API, built from openapi.json and published to GitHub Pages.",
+  "description": "Static API reference site for the FindMyPub API, built with Stoplight Elements and published to GitHub Pages.",
+  "keywords": [
+    "docs",
+    "documentation",
+    "api",
+    "openapi"
+  ],
   "scripts": {
-    "build": "redocly build-docs openapi.json --output dist/index.html --title \"FindMyPub API\" --template redocly-template.hbs && mkdir -p dist/assets && cp -R assets/. dist/assets"
+    "start": "node scripts/dev.js",
+    "dev": "node scripts/dev.js",
+    "preview": "node scripts/build.js && npx http-server dist -o",
+    "build": "NODE_ENV=production node scripts/build.js",
+    "test": "echo \"Warning: No tests\" && exit 0"
   },
   "devDependencies": {
-    "@redocly/cli": "^2.53.0"
+    "@stoplight/elements": "^8.5.2",
+    "fs-extra": "^11.4.0",
+    "http-server": "^14.1.1"
   }
 }

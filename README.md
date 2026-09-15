@@ -3,8 +3,9 @@
 Static API reference site for the FindMyPub API, published to GitHub Pages.
 
 The site is generated from [`openapi.json`](openapi.json) using
-[Redocly CLI](https://redocly.com/docs/cli/), which renders it into a single
-static HTML page (via `redoc-static`).
+[Stoplight Elements](https://github.com/stoplightio/elements). The build copies
+the static shell from [`src`](src), vendors the Stoplight web component assets
+from `node_modules`, and writes the GitHub Pages artifact to `dist/`.
 
 Live site: `https://mypubgroup.github.io/api-docs/` (once GitHub Pages is
 enabled — see [Manual setup](#manual-setup) below).
@@ -32,8 +33,16 @@ npm install
 npm run build
 ```
 
-Output is written to `dist/index.html`. Open it directly in a browser to
-preview.
+Output is written to `dist/`. Because Stoplight fetches `openapi.json`, preview
+the built site through a local static server:
+
+```bash
+npm start
+```
+
+`npm start` runs the local dev server and hot-reloads changes to
+`assets/custom.css` without a full page refresh. Use `npm run preview` for a
+production-style static preview.
 
 ## Manual setup
 
