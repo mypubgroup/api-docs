@@ -253,6 +253,64 @@ elements-api {
   border-color: rgba(198, 198, 198, 0.58);
 }
 
+.sl-elements .BaseURLContent {
+  background: var(--fmp-charcoal);
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 20px;
+  overflow: hidden;
+  padding-bottom: 6px;
+  position: relative;
+}
+
+.sl-elements .BaseURLContent::after {
+  background: linear-gradient(
+    90deg,
+    var(--fmp-blue) 0 25%,
+    var(--fmp-yellow) 25% 50%,
+    var(--fmp-pink) 50% 75%,
+    var(--fmp-green) 75% 100%
+  );
+  bottom: 0;
+  content: "";
+  height: 6px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.sl-elements .BaseURLContent .sl-panel__titlebar,
+.sl-elements .BaseURLContent .sl-panel__content-wrapper,
+.sl-elements .BaseURLContent .sl-panel__content {
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+}
+
+
+.sl-elements .BaseURLContent > .sl-panel__titlebar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--fmp-grey);
+}
+
+.sl-elements .BaseURLContent .ServerInfo {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.18);
+  padding: 10px 0;
+}
+
+.sl-elements .BaseURLContent [data-test="server-row"],
+.sl-elements .BaseURLContent [data-test="server-row"] * {
+  color: inherit;
+  font-size: inherit;
+}
+
+.sl-elements .BaseURLContent .sl-p-4 {
+  padding: 0;
+}
+
 @media (max-width: 640px) {
   .site-header {
     height: 64px;
